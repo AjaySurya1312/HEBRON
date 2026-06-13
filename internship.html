@@ -1,0 +1,1141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Program | Hebron Automotive Products Pvt. Ltd. | Hosur</title>
+  <meta name="description" content="Launch your engineering career with Hebron Automotive Products Pvt. Ltd. — an IATF 16949:2016 certified Tier-1 automotive manufacturer in Hosur, Tamil Nadu. Apply for internships in die casting, CNC machining, quality, and more." />
+  <meta name="keywords" content="Hebron Automotive internship, engineering internship Hosur, automotive manufacturing internship, die casting internship, CNC machining internship, IATF internship Tamil Nadu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.hebronautomotive.com/internship.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Internship Program | Hebron Automotive Products Pvt. Ltd." />
+  <meta property="og:description" content="Gain real-world manufacturing experience at a certified Tier-1 automotive supplier. Stipend provided. IATF 16949 environment. Apply now." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.hebronautomotive.com/internship.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="hebron_logo.jpg" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    /* ── INTERNSHIP PAGE SPECIFIC STYLES ──────────────────── */
+
+    /* Overview two-column */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 72px);
+      align-items: start;
+    }
+    .overview-content h2 { margin-bottom: 14px; }
+    .overview-content p { margin-bottom: 14px; }
+    .overview-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .overview-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .88rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .overview-list-item .ov-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--blue-light);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+    }
+    .overview-list-item .ov-icon svg { width: 15px; height: 15px; }
+
+    /* Quick facts box */
+    .quickfacts-box {
+      background: var(--navy);
+      border-radius: var(--r-xl);
+      padding: clamp(24px, 4vw, 36px);
+      color: #fff;
+      position: sticky;
+      top: 88px;
+    }
+    .quickfacts-box h3 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quickfacts-box h3 svg { width: 18px; height: 18px; color: rgba(255,255,255,.6); }
+    .qf-list { display: flex; flex-direction: column; gap: 0; }
+    .qf-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      gap: 12px;
+    }
+    .qf-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .qf-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.55);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .qf-label svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .qf-value {
+      font-family: var(--font-h);
+      font-size: .86rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: right;
+    }
+    .qf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(22,163,74,.2);
+      border: 1px solid rgba(22,163,74,.4);
+      color: #4ADE80;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .qf-cta {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .qf-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--blue);
+      padding: 12px 20px;
+      border-radius: var(--r-md);
+      font-family: var(--font-h);
+      font-size: .86rem;
+      font-weight: 700;
+      transition: all var(--t);
+    }
+    .qf-cta a:hover { background: var(--blue-light); }
+    .qf-cta a svg { width: 15px; height: 15px; }
+
+    /* Learning outcomes */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--gray-soft);
+      border: 1px solid var(--gray-mid);
+      border-radius: var(--r-lg);
+      padding: 18px 20px;
+      transition: all var(--t);
+    }
+    .outcome-item:hover { border-color: var(--blue); background: var(--blue-light); }
+    .outcome-num {
+      font-family: var(--font-h);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gray-mid);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 36px;
+    }
+    .outcome-text h4 { font-size: .9rem; margin-bottom: 4px; color: var(--navy); }
+    .outcome-text p { font-size: .8rem; line-height: 1.55; }
+
+    /* Application form section (on blue bg) */
+    .intern-form-section {
+      background: var(--blue);
+      padding: var(--sy) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .intern-form-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,58,122,.7) 0%, rgba(0,87,184,.4) 100%);
+    }
+    .intern-form-section .container { position: relative; z-index: 2; }
+    .intern-form-wrap {
+      background: #fff;
+      border-radius: var(--r-xl);
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.2);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .intern-form-header { margin-bottom: 28px; }
+    .intern-form-header .section-label { color: var(--blue); }
+    .intern-form-header h2 { margin-bottom: 8px; }
+    .intern-form-header p { color: var(--text-body); max-width: 540px; }
+
+    /* Inline form row for 2-col */
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+
+    /* Dept card tag */
+    .dept-tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* Benefits icon colors */
+    .benefit-card:nth-child(1) .benefit-icon { background: #EAF4FF; color: #0057B8; }
+    .benefit-card:nth-child(2) .benefit-icon { background: #F0FDF4; color: #16A34A; }
+    .benefit-card:nth-child(3) .benefit-icon { background: #FFF7ED; color: #EA580C; }
+    .benefit-card:nth-child(4) .benefit-icon { background: #FDF4FF; color: #9333EA; }
+    .benefit-card:nth-child(5) .benefit-icon { background: #FFF1F2; color: #E11D48; }
+    .benefit-card:nth-child(6) .benefit-icon { background: #F0F9FF; color: #0284C7; }
+    .benefit-card:nth-child(7) .benefit-icon { background: #FEFCE8; color: #CA8A04; }
+    .benefit-card:nth-child(8) .benefit-icon { background: #F0FDF4; color: #16A34A; }
+
+    .benefit-card { transition: all var(--t); }
+    .benefit-card:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: var(--blue); }
+
+    /* Section title blue bg */
+    .intern-form-section .section-label::before { background: rgba(255,255,255,.5); }
+    .intern-form-bg-header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    .intern-form-bg-header .section-label {
+      color: rgba(255,255,255,.8);
+      justify-content: center;
+    }
+    .intern-form-bg-header .section-label::before { background: rgba(255,255,255,.4); }
+    .intern-form-bg-header h2 { color: #fff; margin-bottom: 10px; }
+    .intern-form-bg-header p { color: rgba(255,255,255,.7); max-width: 540px; margin: 0 auto; }
+
+    /* Reset btn */
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1.5px solid var(--gray-border);
+      padding: 13px 22px;
+      border-radius: var(--r-md);
+      font-family: var(--font-h);
+      font-size: .88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--t);
+    }
+    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* Floating pattern on hero */
+    .page-hero-pattern {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .page-hero-pattern svg {
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 480px;
+      height: 480px;
+      opacity: .04;
+    }
+
+    /* FAQ layout on internship */
+    .faq-section-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 72px);
+      align-items: start;
+    }
+    .faq-sidebar {
+      position: sticky;
+      top: 88px;
+    }
+    .faq-sidebar-box {
+      background: var(--blue);
+      border-radius: var(--r-xl);
+      padding: clamp(24px, 4vw, 36px);
+      color: #fff;
+    }
+    .faq-sidebar-box h3 { color: #fff; margin-bottom: 12px; font-size: 1.1rem; }
+    .faq-sidebar-box p { color: rgba(255,255,255,.68); font-size: .88rem; margin-bottom: 20px; line-height: 1.7; }
+    .faq-contact-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.1);
+      border-radius: var(--r-md);
+      padding: 11px 14px;
+      font-size: .84rem;
+      color: rgba(255,255,255,.85);
+      transition: background var(--t);
+    }
+    .faq-contact-item:hover { background: rgba(255,255,255,.18); }
+    .faq-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; opacity: .7; }
+    .faq-contact-item a { color: rgba(255,255,255,.85); }
+    .faq-contact-item a:hover { color: #fff; }
+
+    /* Learning section dark accent */
+    .outcomes-section-accent {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--blue-light);
+      border: 1px solid rgba(0,87,184,.15);
+      border-radius: var(--r-lg);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .outcomes-section-accent svg { width: 22px; height: 22px; color: var(--blue); flex-shrink: 0; margin-top: 2px; }
+    .outcomes-section-accent p { font-size: .88rem; color: var(--navy); line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .overview-grid,
+      .faq-section-layout { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .form-row-3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .dept-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .eligibility-grid { grid-template-columns: 1fr; }
+      .form-row-3 { grid-template-columns: 1fr; }
+      .intern-hero-badges { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════ -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TOPBAR
+  ═══════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="tel:+916381100663" class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.75-1.75a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 63811 00663
+        </a>
+        <a href="mailto:info@hebronautomotive.com" class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          info@hebronautomotive.com
+        </a>
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Hosur, Tamil Nadu, India
+        </span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-cert">IATF 16949:2016 ✓</span>
+        <span class="topbar-cert">ISO 9001:2015 ✓</span>
+        <span class="topbar-cert">ISO 14001:2015 ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Hebron Automotive – Home">
+        <img src="hebron_logo.jpg" alt="Hebron Automotive Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">HEBRON</span>
+          <span class="nav-logo-sub">Automotive Products</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="internship.html" class="active">Internship</a>
+        <a href="contact.html" class="nav-contact-btn">Contact Us</a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         PAGE HERO
+    ═══════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="Internship Programme">
+      <div class="page-hero-bg">
+        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="https://assets.mixkit.co/videos/47755/47755-720.mp4" type="video/mp4" />
+          <img src="internship_students.png" alt="Engineering students gaining hands-on experience at Hebron Automotive" loading="lazy" />
+        </video>
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-pattern" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="white" stroke-width="1"/>
+          <circle cx="200" cy="200" r="140" stroke="white" stroke-width="1"/>
+          <circle cx="200" cy="200" r="100" stroke="white" stroke-width="1"/>
+          <line x1="20" y1="200" x2="380" y2="200" stroke="white" stroke-width="1"/>
+          <line x1="200" y1="20" x2="200" y2="380" stroke="white" stroke-width="1"/>
+          <line x1="72" y1="72" x2="328" y2="328" stroke="white" stroke-width="1"/>
+          <line x1="328" y1="72" x2="72" y2="328" stroke="white" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="page-hero-eyebrow">
+          <span>🎓</span> Internship Programme
+        </div>
+        <h1>Launch Your Career<br />with Hebron Automotive</h1>
+        <p>Gain real-world manufacturing experience with a certified Tier-1 automotive supplier. Learn from industry experts in a world-class production environment.</p>
+        <div class="intern-hero-badges">
+          <span class="intern-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2-3.37 6.88L2 9.99l5 4.84-1.17 6.84L12 18.3l6.17 3.37L17 14.83l5-4.84-6.63-1.11L12 2z"/></svg>
+            ✓ IATF 16949 Environment
+          </span>
+          <span class="intern-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            ✓ Stipend Provided
+          </span>
+          <span class="intern-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12.5a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0z"/><path d="m9 12 2 2 4-4"/></svg>
+            ✓ Certificate of Completion
+          </span>
+        </div>
+        <div class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Internship</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         OVERVIEW SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="bg-white" aria-label="Internship Overview">
+      <div class="container">
+        <div class="overview-grid">
+
+          <!-- Left: Text Content -->
+          <div class="overview-content reveal-l">
+            <div class="section-label">Why Intern at Hebron</div>
+            <h2>Real Manufacturing Experience at a Tier-1 Supplier</h2>
+            <div class="divider"></div>
+            <p>At Hebron Automotive Products Pvt. Ltd., we believe the best engineers are shaped on the shop floor — not just in classrooms. Our internship programme gives you unmatched exposure to live automotive manufacturing operations, working alongside skilled engineers in a certified, high-pressure production environment.</p>
+            <p>Founded in 2019, Hebron has grown into a leading Tier-1 supplier with 120+ employees, serving Tier-1 clients like Gabriel India Ltd. and Hitachi Astemo. As an intern, you'll witness and participate in every stage of this value chain.</p>
+
+            <div class="overview-list">
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div><strong>Live die casting operations</strong> — witness high-pressure and gravity die casting of aluminium automotive components in real time, with industry-standard process parameters.</div>
+              </div>
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div><strong>VMC and CNC machining on HAAS USA machines</strong> — understand G-code, fixture setups, tool wear monitoring, and how precision tolerances are achieved in production.</div>
+              </div>
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div><strong>IATF 16949 quality systems in practice</strong> — learn how SPC, MSA, PPAP, and FMEA are used in daily production, not just as theory, but as live tools to control quality.</div>
+              </div>
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div><strong>Mentorship from senior engineers</strong> — every intern is assigned a department mentor who guides project work, answers technical queries, and evaluates performance.</div>
+              </div>
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div><strong>Powder coating and surface treatment processes</strong> — understand automotive-grade finishing operations including DFT measurement, adhesion tests, and salt spray testing.</div>
+              </div>
+              <div class="overview-list-item">
+                <div class="ov-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div><strong>Cross-functional exposure</strong> — interact with production, quality, toolroom, maintenance, and supply chain teams to understand how a world-class automotive plant is run end-to-end.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Quick Facts Box -->
+          <div class="reveal-r">
+            <div class="quickfacts-box">
+              <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Internship Quick Facts
+              </h3>
+              <div class="qf-list">
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Duration
+                  </span>
+                  <span class="qf-value">1 to 6 Months</span>
+                </div>
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    Departments
+                  </span>
+                  <span class="qf-value">6 Departments</span>
+                </div>
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    Eligibility
+                  </span>
+                  <span class="qf-value">BE / Diploma Engg.</span>
+                </div>
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Stipend
+                  </span>
+                  <span class="qf-value">Performance-Based</span>
+                </div>
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                    Certificate
+                  </span>
+                  <span class="qf-value qf-badge">✓ Provided</span>
+                </div>
+                <div class="qf-item">
+                  <span class="qf-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    Start Dates
+                  </span>
+                  <span class="qf-value">Rolling Intake</span>
+                </div>
+              </div>
+              <div class="qf-cta">
+                <a href="#apply">
+                  Apply Now
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         DEPARTMENTS SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="bg-gray" aria-label="Internship Departments">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <div class="section-label">Departments</div>
+          <h2>Choose Your Area of Interest</h2>
+          <p>We offer structured internship placements across six key departments, each providing hands-on technical experience in a live automotive manufacturing environment.</p>
+        </div>
+
+        <div class="dept-grid">
+
+          <!-- 1: Production & Die Casting -->
+          <div class="dept-card reveal d1">
+            <span class="dept-tag">Manufacturing</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <h3>Production &amp; Die Casting</h3>
+            <p>Learn high-pressure and gravity die casting (PDC/GDC) operations on real production machines. Understand melt preparation, die setup, material handling, injection parameters, cycle time control, and process troubleshooting in a live manufacturing environment.</p>
+          </div>
+
+          <!-- 2: CNC / VMC Operations -->
+          <div class="dept-card reveal d2">
+            <span class="dept-tag">Machining</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 1.64 12.16l-1.64-1.64A8 8 0 0 0 6.94 3.36L5.3 1.71A10 10 0 0 1 19.07 4.93z"/><path d="M4.93 19.07a10 10 0 0 1-1.64-12.16l1.64 1.64A8 8 0 0 0 17.06 20.64l1.64 1.64A10 10 0 0 1 4.93 19.07z"/></svg>
+            </div>
+            <h3>CNC / VMC Operations</h3>
+            <p>Operate 5-axis HAAS USA VMC machining centres and CNC turning machines. Gain practical knowledge of G-code programming, fixture and tooling setup, cutting tool selection, offset management, and maintaining tight tolerances on aluminium automotive components.</p>
+          </div>
+
+          <!-- 3: Quality & Inspection -->
+          <div class="dept-card reveal d3">
+            <span class="dept-tag">Quality</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>Quality &amp; Inspection</h3>
+            <p>Work hands-on with advanced metrology equipment — Video Measuring Machine (VMM), Universal Testing Machine (UTM), Spectrometer, Ra Tester, and 2D measurement. Learn IATF 16949 quality management, SPC charting, MSA studies, and incoming/outgoing inspection protocols.</p>
+          </div>
+
+          <!-- 4: Design & Engineering -->
+          <div class="dept-card reveal d1">
+            <span class="dept-tag">Design</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3>Design &amp; Engineering</h3>
+            <p>Create and revise CAD drawings for die casting dies, fixtures, and tooling. Participate in process improvement projects, design for manufacturing (DFM) reviews, and engineering change management. Exposure to component drawings, GD&T, and tooling design principles.</p>
+          </div>
+
+          <!-- 5: Maintenance -->
+          <div class="dept-card reveal d2">
+            <span class="dept-tag">Maintenance</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Maintenance</h3>
+            <p>Learn preventive and predictive maintenance of die casting machines, hydraulic systems, pneumatic circuits, and electrical control panels. Assist in scheduled maintenance activities, breakdown analysis, MTTR and MTBF tracking, and spare parts management for a 7-machine PDC plant.</p>
+          </div>
+
+          <!-- 6: Administration & HR -->
+          <div class="dept-card reveal d3">
+            <span class="dept-tag">Administration</span>
+            <div class="dept-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3>Administration &amp; HR</h3>
+            <p>Understand how a Tier-1 automotive business operates — from vendor management, purchase orders, and supply chain coordination to HR processes including payroll basics, attendance management, statutory compliance, and employee engagement practices in a manufacturing company.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════
+         ELIGIBILITY SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="bg-gray" aria-label="Eligibility Criteria">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <div class="section-label">Eligibility</div>
+          <h2>Who Can Apply</h2>
+          <p>We welcome motivated engineering students who are passionate about manufacturing and eager to learn in a fast-paced industrial environment.</p>
+        </div>
+
+        <div class="eligibility-grid">
+
+          <!-- Eligibility Criteria -->
+          <div class="elig-card reveal-l">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Eligibility Criteria
+            </h3>
+            <div class="elig-list">
+              <div class="elig-item">BE / B.Tech students in Mechanical Engineering, Production Engineering, Metallurgy, or Industrial Engineering</div>
+              <div class="elig-item">Diploma students in Mechanical Engineering, Production Engineering, or Tool &amp; Die Making</div>
+              <div class="elig-item">Currently enrolled and registered in a recognised university or polytechnic institution</div>
+              <div class="elig-item">Academic standing of 60% or above in the most recent semester / year examinations</div>
+              <div class="elig-item">Genuine interest in automotive manufacturing, quality systems, or industrial engineering</div>
+              <div class="elig-item">Willingness to work on the shop floor and engage with live production processes</div>
+              <div class="elig-item">Basic knowledge of engineering drawing, tolerances, and manufacturing fundamentals (preferred)</div>
+            </div>
+          </div>
+
+          <!-- Programme Details -->
+          <div class="elig-card reveal-r">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Programme Details
+            </h3>
+            <div class="elig-list">
+              <div class="elig-item">Duration: 1 to 6 months depending on academic requirement and department availability</div>
+              <div class="elig-item">Flexible start dates — we accept applications throughout the year with rolling intake</div>
+              <div class="elig-item">Working hours: Monday to Saturday, 8:30 AM – 5:30 PM (with Sunday off)</div>
+              <div class="elig-item">Performance-based stipend — amount varies by department and individual performance assessment</div>
+              <div class="elig-item">Formal internship request letter from your institution must be submitted with application</div>
+              <div class="elig-item">Certificate of Internship completion issued by Managing Director upon successful finishing</div>
+              <div class="elig-item">Progress review conducted at the midpoint and end of internship by department mentor</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════
+         APPLICATION FORM SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="intern-form-section" id="apply" aria-label="Internship Application Form">
+      <div class="container">
+
+        <div class="intern-form-bg-header reveal">
+          <div class="section-label">Apply Now</div>
+          <h2>Start Your Application</h2>
+          <p>Complete the form below and our team will contact you within 5–7 working days to discuss your placement details and confirm your internship schedule.</p>
+        </div>
+
+        <div class="intern-form-wrap reveal">
+
+          <div class="intern-form-header">
+            <div class="section-label">Application Form</div>
+            <h2>Apply for Internship</h2>
+            <p>All fields marked with <span style="color:#e53e3e;font-weight:700;">*</span> are required. Please ensure your contact details are correct — we will reach you at the email or phone number you provide.</p>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-success" id="intern-success" role="alert" aria-live="polite">
+            <div class="form-success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h4>Application Submitted Successfully!</h4>
+            <p>Thank you for applying to the Hebron Automotive Internship Programme. Our HR team will review your application and reach out within 5–7 working days. Please check your email inbox (and spam folder) for our confirmation message.</p>
+          </div>
+
+          <!-- The Form -->
+          <form id="internship-form" novalidate autocomplete="on">
+
+            <!-- Row 1: Full Name + Email + Phone -->
+            <div class="form-row-3">
+              <div class="form-group">
+                <label class="form-label" for="f-name">Full Name <span class="req">*</span></label>
+                <input type="text" id="f-name" name="fullName" class="form-control" placeholder="e.g. Arjun Sharma" required autocomplete="name" />
+                <span class="form-error" data-for="f-name" id="err-name">Please enter your full name.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-email">Email Address <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" class="form-control" placeholder="you@college.edu" required autocomplete="email" />
+                <span class="form-error" data-for="f-email" id="err-email">Please enter a valid email address.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="f-phone" name="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel" />
+                <span class="form-error" data-for="f-phone" id="err-phone">Please enter your phone number.</span>
+              </div>
+            </div>
+
+            <!-- Row 2: College + Degree -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-college">College / University Name <span class="req">*</span></label>
+                <input type="text" id="f-college" name="college" class="form-control" placeholder="e.g. Anna University, Chennai" required />
+                <span class="form-error" data-for="f-college" id="err-college">Please enter your institution name.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-degree">Degree / Programme <span class="req">*</span></label>
+                <input type="text" id="f-degree" name="degree" class="form-control" placeholder="e.g. B.E. Mechanical Engineering" required />
+                <span class="form-error" data-for="f-degree" id="err-degree">Please enter your degree or programme.</span>
+              </div>
+            </div>
+
+            <!-- Row 3: Department + Year of Study -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-dept">Department of Interest <span class="req">*</span></label>
+                <select id="f-dept" name="department" class="form-control" required>
+                  <option value="" disabled selected>— Select a department —</option>
+                  <option value="production">Production &amp; Die Casting</option>
+                  <option value="cnc">CNC / VMC Operations</option>
+                  <option value="quality">Quality &amp; Inspection</option>
+                  <option value="design">Design &amp; Engineering</option>
+                  <option value="maintenance">Maintenance</option>
+                  <option value="administration">Administration &amp; HR</option>
+                </select>
+                <span class="form-error" data-for="f-dept" id="err-dept">Please select a department.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-year">Year of Study <span class="req">*</span></label>
+                <select id="f-year" name="yearOfStudy" class="form-control" required>
+                  <option value="" disabled selected>— Select year —</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                  <option value="4th">4th Year</option>
+                  <option value="final">Final Year</option>
+                  <option value="diploma">Diploma</option>
+                </select>
+                <span class="form-error" data-for="f-year" id="err-year">Please select your year of study.</span>
+              </div>
+            </div>
+
+            <!-- Area of Interest -->
+            <div class="form-group">
+              <label class="form-label" for="f-interest">Area of Interest / Statement of Purpose</label>
+              <textarea id="f-interest" name="areaOfInterest" class="form-control" rows="4" placeholder="Briefly describe why you want to intern at Hebron Automotive and what specific aspects of manufacturing you are most eager to learn about. This helps us match you to the right mentor and project."></textarea>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="form-group">
+              <label class="form-label" for="f-resume">Resume / CV Upload</label>
+              <label class="file-upload" id="file-label" for="f-resume">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;margin-bottom:6px;display:block;margin-left:auto;margin-right:auto;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span id="file-label-text">Click to upload your résumé (PDF, DOC, DOCX — max 5MB)</span>
+                <input type="file" id="f-resume" name="resume" accept=".pdf,.doc,.docx" style="display:none;" />
+              </label>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="form-group">
+              <label class="form-label" for="f-notes">Additional Notes / Preferred Internship Dates</label>
+              <textarea id="f-notes" name="additionalNotes" class="form-control" rows="3" placeholder="Mention your preferred start date, internship duration required by your college, any specific project you'd like to work on, or any other relevant information."></textarea>
+            </div>
+
+            <!-- Form Actions -->
+            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px;">
+              <button type="submit" class="btn btn-blue btn-ripple btn-lg" id="submit-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+                Apply Now
+              </button>
+              <button type="reset" class="btn-ghost" id="reset-btn" onclick="resetInternForm()">
+                Reset Form
+              </button>
+              <span style="font-size:.78rem;color:var(--text-muted);margin-left:4px;">
+                Your information is kept confidential and used only for internship placement purposes.
+              </span>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>HEBRON AUTOMOTIVE PRODUCTS PVT. LTD.</h3>
+          <p>IATF 16949:2016 certified manufacturer of precision aluminium die casting and powder-coated automotive components. Established in Hosur, Tamil Nadu in 2019.</p>
+          <span class="footer-cert-badge">IATF 16949:2016 Certified</span>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="internship.html">Internship</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-map-col">
+          <h4>Find Us</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0!2d77.8253!3d12.7294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae706248f4b3e7%3A0x2f5b5f5f5f5f5f5f!2sHebron+Automotive+Products+Pvt+Ltd%2C+No.+3%2F250%2C+Bharathiyar+Nagar%2C+Hosur%2C+Tamil+Nadu+635109!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="160"
+            style="border:0;border-radius:8px;opacity:0.85;filter:grayscale(20%);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hebron Automotive location in Hosur, Tamil Nadu"
+            aria-label="Map showing Hebron Automotive factory location">
+          </iframe>
+          <p style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.4;">
+            No. 3/250, Bharathiyar Nagar,<br>Hosur – 635 109, Tamil Nadu
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+916381100663">+91 63811 00663</a></li>
+            <li><a href="tel:+919442619772">+91 94426 19772</a></li>
+            <li><a href="mailto:info@hebronautomotive.com">info@hebronautomotive.com</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.78rem;">GSTIN: 33AAECH6875K1Z6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Hebron Automotive Products Pvt. Ltd. All rights reserved.</span>
+        <span>No. 3/250, Bharathiyar Nagar, Hosur – 635 109, Tamil Nadu</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
+  <script>
+    /* ── SCROLL PROGRESS BAR ──────────────────────────────── */
+    (function () {
+      const bar = document.getElementById('scroll-bar');
+      if (!bar) return;
+      window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+      }, { passive: true });
+    })();
+
+    /* ── NAVBAR SCROLL ELEVATION ──────────────────────────── */
+    (function () {
+      const nav = document.getElementById('navbar');
+      if (!nav) return;
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('elevated', window.scrollY > 40);
+      }, { passive: true });
+    })();
+
+    /* ── MOBILE NAV TOGGLE ────────────────────────────────── */
+    (function () {
+      const btn = document.getElementById('nav-toggle');
+      const links = document.getElementById('nav-links');
+      if (!btn || !links) return;
+      btn.addEventListener('click', function () {
+        const open = links.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
+    /* ── BACK TO TOP ──────────────────────────────────────── */
+    (function () {
+      const btn = document.getElementById('back-top');
+      if (!btn) return;
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('show', window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    /* ── REVEAL ON SCROLL ─────────────────────────────────── */
+    (function () {
+      const items = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-scale');
+      if (!items.length) return;
+      const obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(function (el) { obs.observe(el); });
+    })();
+
+    /* ── FAQ ACCORDION ────────────────────────────────────── */
+    (function () {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        const btn = item.querySelector('.faq-q');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          const isOpen = item.classList.contains('open');
+          // Close all
+          items.forEach(function (i) {
+            i.classList.remove('open');
+            const q = i.querySelector('.faq-q');
+            if (q) q.setAttribute('aria-expanded', 'false');
+          });
+          // Toggle current
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    /* ── FILE UPLOAD LABEL ────────────────────────────────── */
+    (function () {
+      const input = document.getElementById('f-resume');
+      const label = document.getElementById('file-label');
+      const labelText = document.getElementById('file-label-text');
+      if (!input || !label || !labelText) return;
+      input.addEventListener('change', function () {
+        if (input.files && input.files.length > 0) {
+          const file = input.files[0];
+          const sizeMB = (file.size / 1024 / 1024).toFixed(2);
+          labelText.textContent = '✓ ' + file.name + ' (' + sizeMB + ' MB)';
+          label.classList.add('has-file');
+        } else {
+          labelText.textContent = 'Click to upload your résumé (PDF, DOC, DOCX — max 5MB)';
+          label.classList.remove('has-file');
+        }
+      });
+    })();
+
+    /* ── FORM VALIDATION + SUBMIT ─────────────────────────── */
+    (function () {
+      const form = document.getElementById('internship-form');
+      const successDiv = document.getElementById('intern-success');
+      if (!form) return;
+
+      function showError(id, show) {
+        const el = document.getElementById('err-' + id.replace('f-', ''));
+        const input = document.getElementById(id);
+        if (el) el.classList.toggle('show', show);
+        if (input) input.classList.toggle('error', show);
+      }
+
+      function validateField(id) {
+        const el = document.getElementById(id);
+        if (!el) return true;
+        const val = el.value.trim();
+        if (el.required && !val) { showError(id, true); return false; }
+        if (id === 'f-email' && val) {
+          const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+          if (!ok) { showError(id, true); return false; }
+        }
+        showError(id, false);
+        return true;
+      }
+
+      ['f-name', 'f-email', 'f-phone', 'f-college', 'f-degree', 'f-dept', 'f-year'].forEach(function (id) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', function () { validateField(id); });
+          el.addEventListener('change', function () { validateField(id); });
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fields = ['f-name', 'f-email', 'f-phone', 'f-college', 'f-degree', 'f-dept', 'f-year'];
+        let valid = true;
+        fields.forEach(function (id) {
+          if (!validateField(id)) valid = false;
+        });
+        if (!valid) {
+          const firstErr = form.querySelector('.form-control.error');
+          if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        // Simulate submission
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+        setTimeout(function () {
+          form.style.display = 'none';
+          if (successDiv) {
+            successDiv.classList.add('show');
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 900);
+      });
+    })();
+
+    /* ── RESET FORM ───────────────────────────────────────── */
+    function resetInternForm() {
+      const form = document.getElementById('internship-form');
+      const successDiv = document.getElementById('intern-success');
+      const fileLabel = document.getElementById('file-label');
+      const fileLabelText = document.getElementById('file-label-text');
+      const submitBtn = document.getElementById('submit-btn');
+      if (form) form.style.display = '';
+      if (successDiv) successDiv.classList.remove('show');
+      if (fileLabel) fileLabel.classList.remove('has-file');
+      if (fileLabelText) fileLabelText.textContent = 'Click to upload your résumé (PDF, DOC, DOCX — max 5MB)';
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg> Apply Now'; }
+      // Clear errors
+      document.querySelectorAll('.form-error.show').forEach(function (e) { e.classList.remove('show'); });
+      document.querySelectorAll('.form-control.error').forEach(function (e) { e.classList.remove('error'); });
+    }
+
+    /* ── BUTTON RIPPLE ────────────────────────────────────── */
+    (function () {
+      document.querySelectorAll('.btn-ripple').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          const rect = btn.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          const ripple = document.createElement('span');
+          ripple.classList.add('ripple');
+          ripple.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + x + 'px;top:' + y + 'px;';
+          btn.appendChild(ripple);
+          setTimeout(function () { ripple.remove(); }, 700);
+        });
+      });
+    })();
+
+    /* ── GSAP HERO ANIMATION (if GSAP loads) ─────────────── */
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof gsap === 'undefined') return;
+      gsap.from('.page-hero h1', { duration: 1, y: 40, opacity: 0, ease: 'power3.out', delay: 0.2 });
+      gsap.from('.page-hero p', { duration: 1, y: 30, opacity: 0, ease: 'power3.out', delay: 0.45 });
+      gsap.from('.intern-hero-badges .intern-badge', {
+        duration: 0.7, y: 20, opacity: 0, stagger: 0.12, ease: 'power2.out', delay: 0.65
+      });
+      gsap.from('.page-hero .breadcrumb', { duration: 0.7, opacity: 0, ease: 'power2.out', delay: 1 });
+    });
+  </script>
+
+  <script src="nav.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

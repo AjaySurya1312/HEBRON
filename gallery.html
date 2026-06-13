@@ -1,0 +1,1145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="hebron_logo.jpg" />
+  <meta name="description" content="Gallery of Hebron Automotive Products Pvt. Ltd. — Explore our state-of-the-art manufacturing facility, precision die casting machines, CNC machining centres, powder coating lines, quality lab, and finished automotive components in Hosur, Tamil Nadu." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gallery | Hebron Automotive Products" />
+    <meta property="og:description" content="Explore our state-of-the-art manufacturing facility, precision equipment, quality processes and finished automotive components in Hosur, Tamil Nadu." />
+    <meta property="og:image" content="hebron_logo.jpg" />
+    <meta property="og:site_name" content="Hebron Automotive Products Pvt. Ltd." />
+  <meta name="keywords" content="Hebron Automotive gallery, die casting facility, CNC machining, powder coating, quality inspection, Hosur factory" />
+  <title>Gallery | Hebron Automotive Products Pvt. Ltd.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <style>
+    /* ── Scroll Progress Bar ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #e63012, #ff6b35);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1628 0%, #1a2d50 60%, #0d1f3c 100%);
+      overflow: hidden;
+    }
+    .page-hero::before { display:none; }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(14,30,60,0.72) 100%);
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .page-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+    .page-hero-breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .page-hero-breadcrumb a:hover { color: #e63012; }
+    .page-hero-breadcrumb span { color: rgba(255,255,255,0.35); }
+    .page-hero-tag {
+      display: inline-block;
+      background: rgba(230,48,18,0.15);
+      border: 1px solid rgba(230,48,18,0.4);
+      color: #ff7a5a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.85rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 1rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .page-hero h1 span { color: #e63012; }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 640px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar-section {
+      background: #f4f6fa;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid #e2e6ef;
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+    }
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .filter-bar-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7588;
+      margin-right: 0.4rem;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.42rem 1.1rem;
+      border-radius: 2rem;
+      border: 1.5px solid #d0d6e2;
+      background: #ffffff;
+      color: #3a4560;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      letter-spacing: 0.01em;
+    }
+    .filter-btn:hover {
+      border-color: #e63012;
+      color: #e63012;
+      background: rgba(230,48,18,0.05);
+    }
+    .filter-btn.active {
+      background: #e63012;
+      border-color: #e63012;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(230,48,18,0.25);
+    }
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: rgba(0,0,0,0.08);
+      color: inherit;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+    }
+
+    /* ── Gallery Section ── */
+    .gallery-section {
+      background: #ffffff;
+      padding: 3.5rem 0 4rem;
+    }
+    .gallery-section-header {
+      text-align: center;
+      margin-bottom: 2.8rem;
+    }
+    .gallery-section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #0a1628;
+      margin: 0 0 0.6rem;
+    }
+    .gallery-section-header p {
+      color: #6b7588;
+      font-size: 0.97rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* CSS Masonry using columns */
+    .gallery-grid {
+      column-count: 3;
+      column-gap: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .gallery-grid { column-count: 2; }
+    }
+    @media (max-width: 560px) {
+      .gallery-grid { column-count: 1; }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: #0a1628;
+      box-shadow: 0 2px 12px rgba(10,22,40,0.10);
+      transition: box-shadow 0.28s ease, transform 0.28s ease;
+    }
+    .gallery-item:hover {
+      box-shadow: 0 8px 32px rgba(10,22,40,0.18);
+      transform: translateY(-3px);
+    }
+    .gallery-item.hidden {
+      display: none;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.42s ease, opacity 0.3s ease;
+      opacity: 0.95;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+
+    /* Overlay */
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,0.88) 0%, rgba(10,22,40,0.18) 55%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.1rem 1rem 1rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ff7a5a;
+      margin-bottom: 0.35rem;
+    }
+    .gallery-overlay-caption {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .gallery-overlay-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%) scale(0.7);
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(230,48,18,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-item:hover .gallery-overlay-icon {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    .gallery-overlay-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,10,20,0.96);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-inner img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      display: block;
+    }
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      max-width: 720px;
+      line-height: 1.55;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.4rem;
+      background: rgba(230,48,18,0.85);
+      border: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10001;
+      line-height: 1;
+    }
+    .lightbox-close:hover { background: #c42a0e; }
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.18);
+      color: #fff;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 10001;
+    }
+    .lightbox-prev { left: 1.2rem; }
+    .lightbox-next { right: 1.2rem; }
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(230,48,18,0.7);
+      border-color: #e63012;
+    }
+    .lightbox-counter {
+      position: fixed;
+      top: 1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      z-index: 10001;
+    }
+
+    /* ── Gallery Stats ── */
+    .gallery-stats-section {
+      background: #f4f6fa;
+      padding: 3.5rem 0;
+    }
+    .gallery-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 860px) {
+      .gallery-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gallery-stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    }
+    .gallery-stat-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid #e2e6ef;
+      box-shadow: 0 2px 10px rgba(10,22,40,0.06);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .gallery-stat-card:hover {
+      box-shadow: 0 8px 28px rgba(10,22,40,0.12);
+      transform: translateY(-4px);
+    }
+    .gallery-stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(230,48,18,0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .gallery-stat-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #e63012;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .gallery-stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0a1628;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .gallery-stat-number span { color: #e63012; }
+    .gallery-stat-label {
+      font-size: 0.84rem;
+      color: #6b7588;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── CTA Section ── */
+    .gallery-cta-section {
+      background: linear-gradient(135deg, #0a1628 0%, #1a2d50 100%);
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(230,48,18,0.07);
+      pointer-events: none;
+    }
+    .gallery-cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(230,48,18,0.05);
+      pointer-events: none;
+    }
+    .gallery-cta-section .container { position: relative; z-index: 2; }
+    .gallery-cta-tag {
+      display: inline-block;
+      background: rgba(230,48,18,0.15);
+      border: 1px solid rgba(230,48,18,0.35);
+      color: #ff7a5a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.85rem;
+      border-radius: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .gallery-cta-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 1rem;
+      line-height: 1.22;
+    }
+    .gallery-cta-section p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .cta-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: #e63012;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 22px rgba(230,48,18,0.35);
+      transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+    }
+    .cta-btn-primary:hover {
+      background: #c42a0e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(230,48,18,0.42);
+    }
+    .cta-btn-primary svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── No-results message ── */
+    .gallery-no-results {
+      display: none;
+      text-align: center;
+      padding: 3rem 0;
+      color: #6b7588;
+      font-size: 1rem;
+    }
+    .gallery-no-results.visible { display: block; }
+
+    /* ── Animations ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .gallery-item.fade-in {
+      animation: fadeInUp 0.45s ease both;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════ TOPBAR ══════════ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="tel:+916381100663" class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.42 2 2 0 0 1 3.56 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 63811 00663
+        </a>
+        <a href="mailto:info@hebronautomotive.com" class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          info@hebronautomotive.com
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-cert">IATF 16949:2016 ✓</span>
+        <span class="topbar-cert">ISO 9001:2015 ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="hebron_logo.jpg" alt="Hebron Automotive Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">HEBRON</span>
+          <span class="nav-logo-sub">Automotive Products</span>
+        </div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="internship.html">Internship</a>
+        <a href="contact.html" class="nav-contact-btn">Contact Us</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE HERO ══════════ -->
+  <section class="page-hero" style="position:relative;">
+    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.45;">
+      <source src="https://assets.mixkit.co/videos/14631/14631-720.mp4" type="video/mp4" />
+    </video>
+    <div class="container">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span style="color:rgba(255,255,255,0.85);">Gallery</span>
+      </nav>
+      <div class="page-hero-tag">Photo Gallery</div>
+      <h1>Factory &amp; <span>Product Gallery</span></h1>
+      <p>Explore our state-of-the-art manufacturing facility, precision equipment, quality processes, and finished automotive components — all from our IATF-certified plant in Hosur, Tamil Nadu.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ FILTER BAR ══════════ -->
+  <section class="filter-bar-section">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="Gallery filter buttons">
+        <span class="filter-bar-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all">
+          All <span class="filter-count">12</span>
+        </button>
+        <button class="filter-btn" data-filter="factory">
+          Factory <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="machines">
+          Machines <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-filter="production">
+          Production <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-filter="products">
+          Products <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="quality">
+          Quality <span class="filter-count">2</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GALLERY SECTION ══════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-section-header">
+        <h2>Inside Hebron Automotive</h2>
+        <p>A visual journey through our manufacturing excellence — from raw aluminium to precision-finished components trusted by leading OEMs.</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+
+        <!-- idx=0 | cat=factory -->
+        <div class="gallery-item fade-in" data-cat="factory" data-idx="0" role="button" tabindex="0" aria-label="Open image: Hebron Automotive Production Facility">
+          <img src="factory_exterior.png" alt="Hebron Automotive Production Facility exterior view, Hosur Tamil Nadu" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Factory</span>
+            <p class="gallery-overlay-caption">Hebron Automotive Production Facility — Hosur, Tamil Nadu</p>
+          </div>
+        </div>
+
+        <!-- idx=1 | cat=production -->
+        <div class="gallery-item fade-in" data-cat="production" data-idx="1" role="button" tabindex="0" aria-label="Open image: Main Production Floor">
+          <img src="hero_factory.png" alt="Main production floor showing die casting and machining operations" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Production</span>
+            <p class="gallery-overlay-caption">Main Production Floor — Die Casting and Machining Zone</p>
+          </div>
+        </div>
+
+        <!-- idx=2 | cat=machines -->
+        <div class="gallery-item fade-in" data-cat="machines" data-idx="2" role="button" tabindex="0" aria-label="Open image: High Pressure Die Casting Machine">
+          <img src="die_casting.png" alt="High pressure die casting machine operating at Hebron Automotive" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Machines</span>
+            <p class="gallery-overlay-caption">High Pressure Die Casting Machine in Operation</p>
+          </div>
+        </div>
+
+        <!-- idx=3 | cat=production -->
+        <div class="gallery-item fade-in" data-cat="production" data-idx="3" role="button" tabindex="0" aria-label="Open image: Aluminium Casting Process">
+          <img src="gallery_casting_glow.png" alt="Aluminium casting process showing molten metal controlled pour" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Production</span>
+            <p class="gallery-overlay-caption">Aluminium Casting Process — Controlled Pour</p>
+          </div>
+        </div>
+
+        <!-- idx=4 | cat=machines -->
+        <div class="gallery-item fade-in" data-cat="machines" data-idx="4" role="button" tabindex="0" aria-label="Open image: HAAS VMC Machining Centre">
+          <img src="cnc_machining.png" alt="HAAS USA VMC Vertical Machining Centre performing precision machining" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Machines</span>
+            <p class="gallery-overlay-caption">HAAS USA VMC Machining Centre</p>
+          </div>
+        </div>
+
+        <!-- idx=5 | cat=production -->
+        <div class="gallery-item fade-in" data-cat="production" data-idx="5" role="button" tabindex="0" aria-label="Open image: Conveyor Powder Coating Line">
+          <img src="powder_coating.png" alt="Conveyor powder coating line at Hebron Automotive Hosur facility" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Production</span>
+            <p class="gallery-overlay-caption">Conveyor Powder Coating Line</p>
+          </div>
+        </div>
+
+        <!-- idx=6 | cat=quality -->
+        <div class="gallery-item fade-in" data-cat="quality" data-idx="6" role="button" tabindex="0" aria-label="Open image: Quality Standard Room">
+          <img src="quality_inspection.png" alt="Quality standard room with dimensional inspection equipment" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Quality</span>
+            <p class="gallery-overlay-caption">Quality Standard Room — Dimensional Inspection</p>
+          </div>
+        </div>
+
+        <!-- idx=7 | cat=quality -->
+        <div class="gallery-item fade-in" data-cat="quality" data-idx="7" role="button" tabindex="0" aria-label="Open image: Video Measuring Machine">
+          <img src="quality_lab.png" alt="Video Measuring Machine VMM for precision measurement in quality lab" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Quality</span>
+            <p class="gallery-overlay-caption">Video Measuring Machine (VMM) — Precision Measurement</p>
+          </div>
+        </div>
+
+        <!-- idx=8 | cat=products -->
+        <div class="gallery-item fade-in" data-cat="products" data-idx="8" role="button" tabindex="0" aria-label="Open image: Precision Die Cast Components">
+          <img src="finished_parts.png" alt="Precision aluminium die cast components ready for dispatch" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Products</span>
+            <p class="gallery-overlay-caption">Precision Die Cast Components — Ready for Dispatch</p>
+          </div>
+        </div>
+
+        <!-- idx=9 | cat=products -->
+        <div class="gallery-item fade-in" data-cat="products" data-idx="9" role="button" tabindex="0" aria-label="Open image: Finished Automotive Components">
+          <img src="gallery_finished_components.png" alt="Finished automotive components manufactured by Hebron Automotive" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Products</span>
+            <p class="gallery-overlay-caption">Finished Automotive Components — Hebron Manufacturing</p>
+          </div>
+        </div>
+
+        <!-- idx=10 | cat=machines -->
+        <div class="gallery-item fade-in" data-cat="machines" data-idx="10" role="button" tabindex="0" aria-label="Open image: Tool Room">
+          <img src="tool_room.png" alt="Tool room with Wire EDM and precision grinding machines" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Machines</span>
+            <p class="gallery-overlay-caption">Tool Room — Wire EDM and Precision Grinding</p>
+          </div>
+        </div>
+
+        <!-- idx=11 | cat=factory -->
+        <div class="gallery-item fade-in" data-cat="factory" data-idx="11" role="button" tabindex="0" aria-label="Open image: Panoramic Manufacturing Floor">
+          <img src="about_manufacturing.png" alt="Panoramic view of Hebron Automotive manufacturing floor" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">
+              <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+            <span class="gallery-overlay-tag">Factory</span>
+            <p class="gallery-overlay-caption">Panoramic View of Manufacturing Floor</p>
+          </div>
+        </div>
+
+      </div><!-- /.gallery-grid -->
+
+      <p class="gallery-no-results" id="gallery-no-results">No images found for this category.</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════ LIGHTBOX ══════════ -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <div class="lightbox-counter" id="lb-counter">1 / 12</div>
+    <button class="lightbox-close" id="lb-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox-prev" id="lb-prev" aria-label="Previous image">&#8592;</button>
+    <button class="lightbox-next" id="lb-next" aria-label="Next image">&#8594;</button>
+    <div class="lightbox-inner">
+      <img id="lb-img" src="" alt="" loading="lazy" />
+      <p id="lb-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ══════════ GALLERY STATS ══════════ -->
+  <section class="gallery-stats-section">
+    <div class="container">
+      <div class="gallery-stats-grid">
+
+        <div class="gallery-stat-card">
+          <div class="gallery-stat-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div class="gallery-stat-number">10,000<span>+</span></div>
+          <div class="gallery-stat-label">sq ft Facility</div>
+        </div>
+
+        <div class="gallery-stat-card">
+          <div class="gallery-stat-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          </div>
+          <div class="gallery-stat-number">15<span>+</span></div>
+          <div class="gallery-stat-label">Precision Machines</div>
+        </div>
+
+        <div class="gallery-stat-card">
+          <div class="gallery-stat-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="gallery-stat-number">5<span>+</span></div>
+          <div class="gallery-stat-label">Years Operations</div>
+        </div>
+
+        <div class="gallery-stat-card">
+          <div class="gallery-stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="gallery-stat-number">120<span>+</span></div>
+          <div class="gallery-stat-label">Team Members</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA SECTION ══════════ -->
+  <section class="gallery-cta-section">
+    <div class="container">
+      <div class="gallery-cta-tag">Plan a Visit</div>
+      <h2>Interested in Visiting<br>Our Facility?</h2>
+      <p>We welcome OEM partners, procurement teams, and industry professionals to tour our IATF 16949:2016 certified manufacturing plant in Hosur, Tamil Nadu. See precision die casting, CNC machining, and quality control in action.</p>
+      <a href="contact.html" class="cta-btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Schedule a Factory Visit
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>HEBRON AUTOMOTIVE PRODUCTS PVT. LTD.</h3>
+          <p>IATF 16949:2016 certified manufacturer of precision aluminium die casting and powder-coated automotive components. Established in Hosur, Tamil Nadu in 2019.</p>
+          <span class="footer-cert-badge">IATF 16949:2016 Certified</span>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="internship.html">Internship</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-map-col">
+          <h4>Find Us</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0!2d77.8253!3d12.7294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae706248f4b3e7%3A0x2f5b5f5f5f5f5f5f!2sHebron+Automotive+Products+Pvt+Ltd%2C+No.+3%2F250%2C+Bharathiyar+Nagar%2C+Hosur%2C+Tamil+Nadu+635109!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="160"
+            style="border:0;border-radius:8px;opacity:0.85;filter:grayscale(20%);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hebron Automotive location in Hosur, Tamil Nadu"
+            aria-label="Map showing Hebron Automotive factory location">
+          </iframe>
+          <p style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.4;">
+            No. 3/250, Bharathiyar Nagar,<br>Hosur – 635 109, Tamil Nadu
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+916381100663">+91 63811 00663</a></li>
+            <li><a href="tel:+919442619772">+91 94426 19772</a></li>
+            <li><a href="mailto:info@hebronautomotive.com">info@hebronautomotive.com</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.78rem;">GSTIN: 33AAECH6875K1Z6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Hebron Automotive Products Pvt. Ltd. All rights reserved.</span>
+        <span>No. 3/250, Bharathiyar Nagar, Hosur – 635 109, Tamil Nadu</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
+  <!-- ══════════ SCRIPTS ══════════ -->
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
+
+  <script>
+    /* ── Gallery Data ── */
+    window.addEventListener('DOMContentLoaded', function () {
+
+      var galleryData = [
+        { src: 'factory_exterior.png',          caption: 'Hebron Automotive Production Facility — Hosur, Tamil Nadu' },
+        { src: 'hero_factory.png',              caption: 'Main Production Floor — Die Casting and Machining Zone' },
+        { src: 'die_casting.png',               caption: 'High Pressure Die Casting Machine in Operation' },
+        { src: 'gallery_casting_glow.png',      caption: 'Aluminium Casting Process — Controlled Pour' },
+        { src: 'cnc_machining.png',             caption: 'HAAS USA VMC Machining Centre' },
+        { src: 'powder_coating.png',            caption: 'Conveyor Powder Coating Line' },
+        { src: 'quality_inspection.png',        caption: 'Quality Standard Room — Dimensional Inspection' },
+        { src: 'quality_lab.png',               caption: 'Video Measuring Machine (VMM) — Precision Measurement' },
+        { src: 'finished_parts.png',            caption: 'Precision Die Cast Components — Ready for Dispatch' },
+        { src: 'gallery_finished_components.png', caption: 'Finished Automotive Components — Hebron Manufacturing' },
+        { src: 'tool_room.png',                 caption: 'Tool Room — Wire EDM and Precision Grinding' },
+        { src: 'about_manufacturing.png',       caption: 'Panoramic View of Manufacturing Floor' }
+      ];
+
+      if (typeof initGallery === 'function') {
+        initGallery(galleryData);
+      }
+
+      /* ── Scroll Progress Bar ── */
+      var progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', function () {
+        var scrollTop  = window.scrollY || document.documentElement.scrollTop;
+        var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = pct.toFixed(2) + '%';
+      }, { passive: true });
+
+      /* ── Filter Bar ── */
+      var filterBtns  = document.querySelectorAll('.filter-btn');
+      var galleryItems = document.querySelectorAll('.gallery-item');
+      var noResults    = document.getElementById('gallery-no-results');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = btn.getAttribute('data-filter');
+
+          // Toggle active class
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var visible = 0;
+          galleryItems.forEach(function (item, i) {
+            var cat = item.getAttribute('data-cat');
+            if (filter === 'all' || cat === filter) {
+              item.classList.remove('hidden');
+              item.classList.remove('fade-in');
+              // stagger fade-in via delay
+              setTimeout(function () {
+                item.classList.add('fade-in');
+              }, visible * 60);
+              visible++;
+            } else {
+              item.classList.add('hidden');
+              item.classList.remove('fade-in');
+            }
+          });
+
+          if (visible === 0) {
+            noResults.classList.add('visible');
+          } else {
+            noResults.classList.remove('visible');
+          }
+        });
+      });
+
+      /* ── Lightbox ── */
+      var lightbox  = document.getElementById('lightbox');
+      var lbImg     = document.getElementById('lb-img');
+      var lbCaption = document.getElementById('lb-caption');
+      var lbClose   = document.getElementById('lb-close');
+      var lbPrev    = document.getElementById('lb-prev');
+      var lbNext    = document.getElementById('lb-next');
+      var lbCounter = document.getElementById('lb-counter');
+      var currentIdx = 0;
+      var visibleItems = [];
+
+      function buildVisibleList() {
+        visibleItems = [];
+        galleryItems.forEach(function (item) {
+          if (!item.classList.contains('hidden')) {
+            visibleItems.push(parseInt(item.getAttribute('data-idx'), 10));
+          }
+        });
+      }
+
+      function openLightbox(idx) {
+        buildVisibleList();
+        var pos = visibleItems.indexOf(idx);
+        if (pos === -1) pos = 0;
+        currentIdx = pos;
+        showLightboxItem();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function showLightboxItem() {
+        var dataIdx = visibleItems[currentIdx];
+        var item    = galleryData[dataIdx];
+        lbImg.src          = item.src;
+        lbImg.alt          = item.caption;
+        lbCaption.textContent = item.caption;
+        lbCounter.textContent = (currentIdx + 1) + ' / ' + visibleItems.length;
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      galleryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          openLightbox(parseInt(item.getAttribute('data-idx'), 10));
+        });
+        item.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(parseInt(item.getAttribute('data-idx'), 10));
+          }
+        });
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lbPrev.addEventListener('click', function () {
+        currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length;
+        showLightboxItem();
+      });
+
+      lbNext.addEventListener('click', function () {
+        currentIdx = (currentIdx + 1) % visibleItems.length;
+        showLightboxItem();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft')  { currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length; showLightboxItem(); }
+        if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % visibleItems.length; showLightboxItem(); }
+        if (e.key === 'Escape')     closeLightbox();
+      });
+
+      /* ── GSAP Scroll Animations ── */
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.gallery-section-header', {
+          scrollTrigger: {
+            trigger: '.gallery-section-header',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power3.out'
+        });
+
+        gsap.from('.gallery-stat-card', {
+          scrollTrigger: {
+            trigger: '.gallery-stats-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          },
+          y: 32,
+          opacity: 0,
+          stagger: 0.12,
+          duration: 0.65,
+          ease: 'power3.out'
+        });
+
+        gsap.from('.gallery-cta-section h2, .gallery-cta-section p, .gallery-cta-section .cta-btn-primary', {
+          scrollTrigger: {
+            trigger: '.gallery-cta-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          },
+          y: 28,
+          opacity: 0,
+          stagger: 0.14,
+          duration: 0.65,
+          ease: 'power3.out'
+        });
+      }
+
+    }); // DOMContentLoaded
+  </script>
+
+  <script src="nav.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

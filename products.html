@@ -1,0 +1,1397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="hebron_logo.jpg" />
+  <meta name="description" content="Hebron Automotive Products – Precision aluminium die casting, CNC machined, powder coated and assembled automotive components. Supplied to Gabriel India, Hitachi Astemo and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Products | Hebron Automotive Products" />
+    <meta property="og:description" content="Precision aluminium die cast automotive components: shock absorber outer tubes, spring seat adjusters, eyelet assemblies and CNC machined parts." />
+    <meta property="og:image" content="hebron_logo.jpg" />
+    <meta property="og:site_name" content="Hebron Automotive Products Pvt. Ltd." />
+  <meta name="keywords" content="aluminium die casting, CNC machined components, powder coated automotive parts, shock absorber outer tube, spring seat adjuster, Hosur, IATF 16949" />
+  <title>Products | Hebron Automotive Products Pvt. Ltd.</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    /* ── Scroll Progress Bar ───────────────────────────── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #e63946, #f4a261);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Page Hero ─────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a2f45 60%, #243b55 100%);
+      overflow: hidden;
+      padding: 80px 0 60px;
+    }
+    .page-hero::before { display:none; }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,27,42,0.82) 0%, rgba(26,47,69,0.70) 100%);
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #f4a261; }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb span:last-child { color: #f4a261; }
+    .page-hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f4a261;
+      background: rgba(244,162,97,0.12);
+      border: 1px solid rgba(244,162,97,0.3);
+      border-radius: 4px;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      max-width: 700px;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+    .page-hero-badge-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.03em;
+    }
+    .hero-badge svg { flex-shrink: 0; }
+
+    /* ── Search & Filter Bar ───────────────────────────── */
+    .section-search {
+      background: #f2f4f7;
+      padding: 36px 0;
+    }
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 13px 16px 13px 44px;
+      border: 1.5px solid #d1d9e6;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a2f45;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+    .search-wrap input:focus {
+      border-color: #1a2f45;
+      box-shadow: 0 0 0 3px rgba(26,47,69,0.08);
+    }
+    .search-wrap input::placeholder { color: #94a3b8; }
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 9px 20px;
+      border: 1.5px solid #d1d9e6;
+      border-radius: 50px;
+      background: #fff;
+      color: #4a5568;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.22s;
+      letter-spacing: 0.02em;
+    }
+    .filter-btn:hover {
+      border-color: #1a2f45;
+      color: #1a2f45;
+      background: #f0f4f8;
+    }
+    .filter-btn.active {
+      background: #1a2f45;
+      border-color: #1a2f45;
+      color: #fff;
+    }
+    .filter-count {
+      display: inline-block;
+      background: rgba(244,162,97,0.2);
+      color: #c05a0a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 1px 7px;
+      margin-left: 5px;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.9);
+    }
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+      font-size: 1rem;
+    }
+    .no-results svg { display: block; margin: 0 auto 16px; opacity: 0.3; }
+
+    /* ── Products Grid ─────────────────────────────────── */
+    .section-products {
+      background: #fff;
+      padding: 64px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e63946;
+      background: rgba(230,57,70,0.07);
+      border-radius: 4px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #0d1b2a;
+      margin: 0 0 10px;
+    }
+    .section-header p {
+      color: #64748b;
+      font-size: 0.97rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #e8ecf2;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26,47,69,0.13);
+      border-color: #1a2f45;
+    }
+    .product-card.hidden {
+      display: none;
+    }
+    .product-card-img {
+      position: relative;
+      overflow: hidden;
+      height: 210px;
+      background: #f0f4f8;
+    }
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-card-img img {
+      transform: scale(1.06);
+    }
+    .product-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(13,27,42,0.55) 100%);
+    }
+    .product-card-view-btn {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 8px 14px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s, transform 0.25s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .product-card:hover .product-card-view-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .product-card-body {
+      padding: 22px 22px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card-cat {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 8px;
+    }
+    .product-card-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0d1b2a;
+      margin: 0 0 10px;
+      line-height: 1.35;
+    }
+    .product-card-body p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+    .product-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .product-pill {
+      display: inline-block;
+      background: #f0f4f8;
+      color: #1a2f45;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 4px 11px;
+      letter-spacing: 0.03em;
+      border: 1px solid #d9e2ee;
+    }
+
+    /* ── Modal ─────────────────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,20,35,0.72);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-box {
+      background: #fff;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.88) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 26px 18px;
+      border-bottom: 1px solid #eaecf2;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-radius: 18px 18px 0 0;
+      z-index: 1;
+    }
+    .modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0d1b2a;
+      margin: 0;
+      padding-right: 20px;
+      line-height: 1.3;
+    }
+    .modal-close-btn {
+      background: #f2f4f7;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .modal-close-btn:hover { background: #e2e6ed; }
+    .modal-body {
+      padding: 24px 26px 28px;
+    }
+    .modal-img-wrap {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: #f0f4f8;
+    }
+    .modal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #modal-cat {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1a5caa;
+      background: rgba(26,92,170,0.08);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+    #modal-desc {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .modal-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+    .modal-spec-item dt {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    .modal-spec-item dd {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #0d1b2a;
+      margin: 0;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .modal-btn-primary {
+      flex: 1;
+      min-width: 160px;
+      background: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+    .modal-btn-primary:hover { background: #c0303c; }
+    .modal-btn-secondary {
+      flex: 1;
+      min-width: 160px;
+      background: transparent;
+      color: #1a2f45;
+      border: 1.5px solid #d1d9e6;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+    .modal-btn-secondary:hover {
+      border-color: #1a2f45;
+      background: #f0f4f8;
+    }
+
+    /* ── Capabilities CTA ──────────────────────────────── */
+    .section-capabilities-cta {
+      background: #f2f4f7;
+      padding: 72px 0;
+    }
+    .cta-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-inner .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 14px;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #0d1b2a;
+      margin: 0 0 14px;
+    }
+    .cta-inner p {
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin: 0 0 32px;
+    }
+    .cta-btn-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-red {
+      background: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      padding: 14px 28px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.22s, transform 0.18s;
+    }
+    .btn-red:hover { background: #c0303c; transform: translateY(-2px); }
+    .btn-outline-dark {
+      background: transparent;
+      color: #1a2f45;
+      border: 2px solid #1a2f45;
+      border-radius: 9px;
+      padding: 13px 28px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.22s, color 0.22s, transform 0.18s;
+    }
+    .btn-outline-dark:hover {
+      background: #1a2f45;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ── Responsive Helpers ────────────────────────────── */
+    @media (max-width: 768px) {
+      .modal-specs { grid-template-columns: 1fr; }
+      .page-hero { min-height: 300px; padding: 100px 0 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ════════════════════════════════════════ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ════════════════════════════════════════
+       TOPBAR
+  ════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="tel:+916381100663" class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          +91 63811 00663
+        </a>
+        <a href="mailto:info@hebronautomotive.com" class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@hebronautomotive.com
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-cert">IATF 16949:2016 ✓</span>
+        <span class="topbar-cert">ISO 9001:2015 ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="hebron_logo.jpg" alt="Hebron Automotive Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">HEBRON</span>
+          <span class="nav-logo-sub">Automotive Products</span>
+        </div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="internship.html">Internship</a>
+        <a href="contact.html" class="nav-contact-btn">Contact Us</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════ -->
+  <section class="page-hero" style="position:relative;">
+    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.45;">
+      <source src="https://assets.mixkit.co/videos/47257/47257-720.mp4" type="video/mp4" />
+    </video>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Products</span>
+      </nav>
+      <div class="page-hero-eyebrow">Our Product Range</div>
+      <h1>Precision Automotive Components</h1>
+      <p>High-quality aluminium die cast components built to OEM specifications. Every part — inspected, traceable, and delivered on time.</p>
+      <div class="page-hero-badge-row">
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          IATF 16949:2016 Certified
+        </span>
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          OEM Traceable
+        </span>
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          9 Product Families
+        </span>
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          34% Available Capacity
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SEARCH & FILTER BAR
+  ════════════════════════════════════════ -->
+  <section class="section-search">
+    <div class="container">
+      <div class="search-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          type="text"
+          id="product-search"
+          placeholder="Search products — e.g. outer tube, spring seat, powder coat…"
+          autocomplete="off"
+          aria-label="Search products"
+        />
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filter products by category">
+        <button class="filter-btn active" data-filter="all">
+          All <span class="filter-count">9</span>
+        </button>
+        <button class="filter-btn" data-filter="casting">
+          Die Casting <span class="filter-count">5</span>
+        </button>
+        <button class="filter-btn" data-filter="machined">
+          Machined Parts <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="coated">
+          Powder Coated <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" data-filter="assembly">
+          Assemblies <span class="filter-count">2</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PRODUCTS SECTION
+  ════════════════════════════════════════ -->
+  <section class="section-products">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Manufactured In-House</span>
+        <h2>Our Product Portfolio</h2>
+        <p>From raw aluminium ingot to finished, assembled and powder-coated components — every process under one roof in Hosur.</p>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+
+        <!-- P01 -->
+        <div class="product-card" data-cat="casting" data-modal="p01" role="button" tabindex="0" aria-label="View Shock Absorber Outer Tube LH details">
+          <div class="product-card-img">
+            <img src="die_casting.png" alt="Shock Absorber Outer Tube LH – High Pressure Die Casting" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">High Pressure Die Casting</div>
+            <h3>Shock Absorber Outer Tube – LH</h3>
+            <p>GDC-produced outer tubes with precision bore and flange. Machined on HAAS VMC and powder coated. Supplied to Gabriel India.</p>
+            <div class="product-pills">
+              <span class="product-pill">GDC Cast</span>
+              <span class="product-pill">VMC Machined</span>
+              <span class="product-pill">Powder Coated</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P02 -->
+        <div class="product-card" data-cat="casting" data-modal="p02" role="button" tabindex="0" aria-label="View Shock Absorber Outer Tube RH details">
+          <div class="product-card-img">
+            <img src="die_casting.png" alt="Shock Absorber Outer Tube RH – High Pressure Die Casting" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">High Pressure Die Casting</div>
+            <h3>Shock Absorber Outer Tube – RH</h3>
+            <p>Right-hand version outer tube with identical quality specifications and traceability. Parallel production with LH variant.</p>
+            <div class="product-pills">
+              <span class="product-pill">GDC Cast</span>
+              <span class="product-pill">VMC Machined</span>
+              <span class="product-pill">Powder Coated</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P03 -->
+        <div class="product-card" data-cat="casting" data-modal="p03" role="button" tabindex="0" aria-label="View Spring Seat Adjuster details">
+          <div class="product-card-img">
+            <img src="finished_parts.png" alt="Spring Seat Adjuster – Pressure Die Casting" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Pressure Die Casting</div>
+            <h3>Spring Seat Adjuster</h3>
+            <p>High-pressure die cast spring seat adjusters for automotive suspension systems. Produced on 120T–250T PDC machines.</p>
+            <div class="product-pills">
+              <span class="product-pill">PDC Cast</span>
+              <span class="product-pill">CNC Machined</span>
+              <span class="product-pill">OEM Grade</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P04 -->
+        <div class="product-card" data-cat="assembly" data-modal="p04" role="button" tabindex="0" aria-label="View Eyelet Assembly with Sleeve details">
+          <div class="product-card-img">
+            <img src="assembly_operations.png" alt="Eyelet Assembly with Sleeve – Assembly Component" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Assembly Component</div>
+            <h3>Eyelet Assembly with Sleeve</h3>
+            <p>Eyelet components with sleeves in various dimensions. Bush-fitted, ID tapped, shot-blasted per OEM drawing. Ready-to-fit delivery.</p>
+            <div class="product-pills">
+              <span class="product-pill">PDC Cast</span>
+              <span class="product-pill">Bush Fitted</span>
+              <span class="product-pill">ID Tapped</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P05 -->
+        <div class="product-card" data-cat="casting" data-modal="p05" role="button" tabindex="0" aria-label="View Aluminium Housing Suspension details">
+          <div class="product-card-img">
+            <img src="die_casting.png" alt="Aluminium Housing for Suspension – Gravity Die Casting" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Gravity Die Casting</div>
+            <h3>Aluminium Housing – Suspension</h3>
+            <p>Structural aluminium housings for suspension and damper systems. Complex geometries produced via GDC and PDC with 7 GDC machines.</p>
+            <div class="product-pills">
+              <span class="product-pill">PDC</span>
+              <span class="product-pill">GDC</span>
+              <span class="product-pill">Pressure Tight</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P06 -->
+        <div class="product-card" data-cat="machined" data-modal="p06" role="button" tabindex="0" aria-label="View CNC Machined Casting Multi-Axis details">
+          <div class="product-card-img">
+            <img src="cnc_machining.png" alt="CNC Machined Casting – Multi-Axis VMC" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">CNC Machined Component</div>
+            <h3>CNC Machined Casting – Multi-Axis</h3>
+            <p>Die castings with full VMC machining including multi-axis features, threaded bores, precision OD/ID on HAAS VMC — ready to assemble.</p>
+            <div class="product-pills">
+              <span class="product-pill">Cast + Machined</span>
+              <span class="product-pill">HAAS VMC</span>
+              <span class="product-pill">Drawing Matched</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P07 -->
+        <div class="product-card" data-cat="coated" data-modal="p07" role="button" tabindex="0" aria-label="View Powder Coated Aluminium Bracket details">
+          <div class="product-card-img">
+            <img src="powder_coating.png" alt="Powder Coated Aluminium Bracket" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Powder Coated Component</div>
+            <h3>Powder Coated Aluminium Bracket</h3>
+            <p>Aluminium die cast brackets with automotive-grade powder coating. DFT and salt-spray tested per OEM spec on 2 semi-automatic lines.</p>
+            <div class="product-pills">
+              <span class="product-pill">PDC Cast</span>
+              <span class="product-pill">Powder Coated</span>
+              <span class="product-pill">Salt Spray Tested</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P08 -->
+        <div class="product-card" data-cat="machined" data-modal="p08" role="button" tabindex="0" aria-label="View Auto Traub Turned Component details">
+          <div class="product-card-img">
+            <img src="tool_room.png" alt="Auto Traub Precision Turned Component" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Precision Turned Part</div>
+            <h3>Auto Traub Turned Component</h3>
+            <p>Precision-turned components on 10 Auto Traub machines. Up to 32mm diameter. Tight tolerances for hydraulic and pneumatic applications.</p>
+            <div class="product-pills">
+              <span class="product-pill">Turned</span>
+              <span class="product-pill">Up to Ø32mm</span>
+              <span class="product-pill">High Volume</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P09 -->
+        <div class="product-card" data-cat="assembly" data-modal="p09" role="button" tabindex="0" aria-label="View Custom Aluminium Die Casting details">
+          <div class="product-card-img">
+            <img src="assembly_operations.png" alt="Custom Aluminium Die Casting – Engineering Support" loading="lazy" />
+            <div class="product-card-overlay"></div>
+            <button class="product-card-view-btn" tabindex="-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View Details
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Custom Engineering</div>
+            <h3>Custom Aluminium Die Casting</h3>
+            <p>Custom-engineered aluminium die castings from concept through casting, machining, coating and delivery. Full engineering support available.</p>
+            <div class="product-pills">
+              <span class="product-pill">Custom</span>
+              <span class="product-pill">Full Process</span>
+              <span class="product-pill">Engineering Support</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+      <!-- No Results -->
+      <div class="no-results" id="no-results" aria-live="polite">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <strong style="display:block;font-size:1.1rem;color:#374151;margin-bottom:6px;">No products found</strong>
+        Try a different search term or reset the filter.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PRODUCT MODAL
+  ════════════════════════════════════════ -->
+  <div id="product-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Product Details</h3>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close product details">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modal-img" src="" alt="" loading="lazy" />
+        </div>
+        <p id="modal-cat"></p>
+        <p id="modal-desc"></p>
+        <div class="modal-specs">
+          <dl class="modal-spec-item">
+            <dt>Process</dt>
+            <dd id="modal-process"></dd>
+          </dl>
+          <dl class="modal-spec-item">
+            <dt>Material</dt>
+            <dd id="modal-material"></dd>
+          </dl>
+          <dl class="modal-spec-item">
+            <dt>Finish</dt>
+            <dd id="modal-finish"></dd>
+          </dl>
+          <dl class="modal-spec-item">
+            <dt>Tolerance</dt>
+            <dd id="modal-tolerance"></dd>
+          </dl>
+        </div>
+        <div class="modal-actions">
+          <a id="modal-enquiry-btn" href="mailto:info@hebronautomotive.com?subject=Product%20Enquiry%20–%20Hebron%20Automotive&body=Hi%2C%0A%0AI%20would%20like%20to%20enquire%20about%20the%20following%20product%3A%20" class="modal-btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Request Enquiry
+          </a>
+          <a href="contact.html" class="modal-btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Brochure
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       CAPABILITIES CTA
+  ════════════════════════════════════════ -->
+  <section class="section-capabilities-cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="eyebrow">Custom Manufacturing</div>
+        <h2>Can't find what you need?</h2>
+        <p>We manufacture custom components to your drawing. Our engineering team supports you from DFM (Design for Manufacturability) review through casting, machining, finishing and delivery. We have 34% available capacity ready to take on new programmes.</p>
+        <div class="cta-btn-row">
+          <a href="contact.html" class="btn-red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            Contact Engineering Team
+          </a>
+          <a href="mailto:info@hebronautomotive.com?subject=Quote%20Request%20–%20Custom%20Component&body=Hi%20Hebron%20Automotive%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20quote%20for%20a%20custom%20component.%0A%0APlease%20find%20my%20requirements%20below%3A%0A%0A" class="btn-outline-dark">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Request Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>HEBRON AUTOMOTIVE PRODUCTS PVT. LTD.</h3>
+          <p>IATF 16949:2016 certified manufacturer of precision aluminium die casting and powder-coated automotive components. Established in Hosur, Tamil Nadu in 2019.</p>
+          <span class="footer-cert-badge">IATF 16949:2016 Certified</span>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="internship.html">Internship</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-map-col">
+          <h4>Find Us</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0!2d77.8253!3d12.7294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae706248f4b3e7%3A0x2f5b5f5f5f5f5f5f!2sHebron+Automotive+Products+Pvt+Ltd%2C+No.+3%2F250%2C+Bharathiyar+Nagar%2C+Hosur%2C+Tamil+Nadu+635109!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="160"
+            style="border:0;border-radius:8px;opacity:0.85;filter:grayscale(20%);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hebron Automotive location in Hosur, Tamil Nadu"
+            aria-label="Map showing Hebron Automotive factory location">
+          </iframe>
+          <p style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.4;">
+            No. 3/250, Bharathiyar Nagar,<br>Hosur – 635 109, Tamil Nadu
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+916381100663">+91 63811 00663</a></li>
+            <li><a href="tel:+919442619772">+91 94426 19772</a></li>
+            <li><a href="mailto:info@hebronautomotive.com">info@hebronautomotive.com</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.78rem;">GSTIN: 33AAECH6875K1Z6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Hebron Automotive Products Pvt. Ltd. All rights reserved.</span>
+        <span>No. 3/250, Bharathiyar Nagar, Hosur – 635 109, Tamil Nadu</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
+  <!-- ════════════════════════════════════════
+       PRODUCTS DATA (inline JS)
+  ════════════════════════════════════════ -->
+  <script>
+    const PRODUCTS_DATA = {
+      p01: {
+        name:        'Shock Absorber Outer Tube – LH',
+        img:         'die_casting.png',
+        category:    'High Pressure Die Casting',
+        description: 'GDC-produced left-hand shock absorber outer tubes with precision bore, precision flange face, and tight cylindricity. Machined on HAAS VMC 5-axis centres, shot-blasted and powder coated per Gabriel India drawing. Supplied to Gabriel India Ltd. plants at Hosur, Nashik, and Parwanoo. Every batch is 100% dimensionally checked and CMM reported before dispatch.',
+        process:     'Gravity Die Casting + VMC Machining + Powder Coating',
+        material:    'LM6 / A380 Aluminium Alloy',
+        finish:      'Automotive-grade Powder Coat (DFT 60–80 µm)',
+        tolerance:   'IT7 / ±0.025 mm bore'
+      },
+      p02: {
+        name:        'Shock Absorber Outer Tube – RH',
+        img:         'die_casting.png',
+        category:    'High Pressure Die Casting',
+        description: 'Right-hand mirror variant of the shock absorber outer tube, produced on the same GDC tooling line as the LH version. Identical quality parameters including bore tolerance, surface finish, and traceability. Simultaneous production with LH ensures matched delivery quantities. Supplied to Gabriel India Ltd. and Hitachi Astemo Rajasthan Brake Systems.',
+        process:     'Gravity Die Casting + VMC Machining + Powder Coating',
+        material:    'LM6 / A380 Aluminium Alloy',
+        finish:      'Automotive-grade Powder Coat (DFT 60–80 µm)',
+        tolerance:   'IT7 / ±0.025 mm bore'
+      },
+      p03: {
+        name:        'Spring Seat Adjuster',
+        img:         'finished_parts.png',
+        category:    'Pressure Die Casting',
+        description: 'High-pressure die cast spring seat adjusters for automotive suspension systems. Produced on 120T, 180T, and 250T PDC machines. CNC machined for critical seating surfaces and thread features. Pressure tightness tested per drawing. Used in shock absorber assemblies for two-wheeler and four-wheeler applications.',
+        process:     'High Pressure Die Casting + CNC Machining',
+        material:    'ADC12 / A380 Aluminium Alloy',
+        finish:      'Shot Blasted / As Machined',
+        tolerance:   'IT8 / ±0.05 mm seating face'
+      },
+      p04: {
+        name:        'Eyelet Assembly with Sleeve',
+        img:         'assembly_operations.png',
+        category:    'Assembly Component',
+        description: 'Eyelet components with sleeves supplied in various dimensions per OEM drawing. Operations include PDC casting, bush pressing, ID tapping, shot blasting, and final assembly. Each assembly is 100% gauged for bush pull-out force and thread go/no-go. Delivered as ready-to-fit sub-assemblies to shock absorber OEMs.',
+        process:     'PDC Cast + Bush Press + ID Tap + Shot Blast + Assembly',
+        material:    'ADC12 Aluminium + Steel Bush',
+        finish:      'Shot Blasted',
+        tolerance:   'Thread per drawing / Bush press ±0.01 mm'
+      },
+      p05: {
+        name:        'Aluminium Housing – Suspension',
+        img:         'die_casting.png',
+        category:    'Gravity Die Casting',
+        description: 'Structural aluminium housings for suspension and hydraulic damper systems. Complex geometries produced via gravity die casting (7 GDC machines with 3 melting + 1 holding furnace) or high-pressure die casting depending on wall section. Pressure tight tested per OEM requirement. VMC machined for all critical bores, ports and mating faces.',
+        process:     'Gravity Die Casting or PDC + VMC Machining',
+        material:    'LM25 / LM6 / ADC12 Aluminium Alloy',
+        finish:      'As Machined / Anodised per spec',
+        tolerance:   'IT7 bore / ±0.03 mm mating face'
+      },
+      p06: {
+        name:        'CNC Machined Casting – Multi-Axis',
+        img:         'cnc_machining.png',
+        category:    'CNC Machined Component',
+        description: 'Die castings with comprehensive VMC machining including multi-axis features, threaded bores, precision OD/ID turning, face milling, and reaming — all in a single or dual-setup operation on HAAS VMC USA machines. Surface roughness (Ra) verified with Ra tester. Supplied ready-to-assemble. Suitable for hydraulic, pneumatic, and structural automotive components.',
+        process:     'PDC or GDC + HAAS VMC Multi-Axis Machining',
+        material:    'ADC12 / LM6 / LM25 Aluminium',
+        finish:      'As Machined (Ra 1.6 – 3.2 µm)',
+        tolerance:   'IT6–IT7 / ±0.02 mm critical dims'
+      },
+      p07: {
+        name:        'Powder Coated Aluminium Bracket',
+        img:         'powder_coating.png',
+        category:    'Powder Coated Component',
+        description: 'Aluminium die cast structural brackets with automotive-grade electrostatic powder coating applied on 2 semi-automatic powder coating lines. Pre-treatment includes 7-tank phosphating process. DFT measured per batch using DFT meter. Salt spray tested (SST chamber) to 240 hours minimum per OEM requirement. Available in RAL colours as specified.',
+        process:     'PDC Cast + 7-Tank Pre-treat + Electrostatic Powder Coat',
+        material:    'ADC12 Aluminium Alloy',
+        finish:      'Powder Coat – RAL as specified (DFT 60–100 µm)',
+        tolerance:   'Dimensional per drawing / DFT ±10 µm'
+      },
+      p08: {
+        name:        'Auto Traub Turned Component',
+        img:         'tool_room.png',
+        category:    'Precision Turned Part',
+        description: 'Precision-turned components produced on a bank of 10 Auto Traub multi-spindle automatic lathes capable of machining up to 32 mm diameter bar stock. High-volume, consistent production with tight bore and OD tolerances suitable for hydraulic valve bodies, plug components, and fitment pins in shock absorber and brake system assemblies.',
+        process:     'Auto Traub Multi-Spindle Turning (10 machines)',
+        material:    'Aluminium / Brass / Mild Steel bar stock',
+        finish:      'As Turned / De-burred / Cleaned',
+        tolerance:   'IT6 / ±0.01 mm OD & bore'
+      },
+      p09: {
+        name:        'Custom Aluminium Die Casting',
+        img:         'assembly_operations.png',
+        category:    'Custom Engineering',
+        description: 'End-to-end custom aluminium die casting service from concept to delivery. Engineering team provides DFM (Design for Manufacturability) review, die design and fabrication in-house tool room (wire cutting, surface grinding, VMC), trial casting, PPAP documentation, and full-rate production. Applicable for two-wheeler, four-wheeler, EV, and off-highway segments. 34% available capacity available for new programmes.',
+        process:     'DFM → Die Design → Tool Room → PDC/GDC → Machining → Coat → PPAP',
+        material:    'ADC12 / LM6 / LM25 / A380 (customer specified)',
+        finish:      'Per customer drawing (machined / coated / anodised)',
+        tolerance:   'Per customer drawing / PPAP Level 3'
+      }
+    };
+  </script>
+
+  <!-- ════════════════════════════════════════
+       EXTERNAL SCRIPTS
+  ════════════════════════════════════════ -->
+  <script src="main.js" defer></script>
+  <script src="chatbot.js" defer></script>
+
+  <!-- ════════════════════════════════════════
+       PAGE-SPECIFIC SCRIPT
+  ════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ── 1. Scroll Progress Bar ─────────────────────── */
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', function () {
+        const scrollTop    = window.scrollY;
+        const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled     = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = scrolled + '%';
+      }, { passive: true });
+
+      /* ── 2. Filter + Search ─────────────────────────── */
+      const searchInput  = document.getElementById('product-search');
+      const filterBtns   = document.querySelectorAll('.filter-btn');
+      const cards        = document.querySelectorAll('.product-card');
+      const noResults    = document.getElementById('no-results');
+      let activeFilter   = 'all';
+
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visible = 0;
+
+        cards.forEach(function (card) {
+          const cat     = card.dataset.cat;
+          const name    = card.querySelector('h3').textContent.toLowerCase();
+          const desc    = card.querySelector('p').textContent.toLowerCase();
+          const pills   = card.querySelector('.product-pills').textContent.toLowerCase();
+          const catLabel = card.querySelector('.product-card-cat').textContent.toLowerCase();
+
+          const matchFilter = (activeFilter === 'all') || (cat === activeFilter);
+          const matchSearch = !query || name.includes(query) || desc.includes(query) || pills.includes(query) || catLabel.includes(query);
+
+          if (matchFilter && matchSearch) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      searchInput.addEventListener('input', applyFilters);
+
+      /* ── 3. Modal ───────────────────────────────────── */
+      const modal     = document.getElementById('product-modal');
+      const modalBox  = document.getElementById('modal-box');
+      const closeBtn  = document.getElementById('modal-close');
+
+      function openModal(key) {
+        const data = PRODUCTS_DATA[key];
+        if (!data) return;
+
+        document.getElementById('modal-title').textContent     = data.name;
+        document.getElementById('modal-img').src               = data.img;
+        document.getElementById('modal-img').alt               = data.name;
+        document.getElementById('modal-cat').textContent       = data.category;
+        document.getElementById('modal-desc').textContent      = data.description;
+        document.getElementById('modal-process').textContent   = data.process;
+        document.getElementById('modal-material').textContent  = data.material;
+        document.getElementById('modal-finish').textContent    = data.finish;
+        document.getElementById('modal-tolerance').textContent = data.tolerance;
+
+        // Update enquiry email body with product name
+        const enquiryBtn = document.getElementById('modal-enquiry-btn');
+        enquiryBtn.href = 'mailto:info@hebronautomotive.com?subject=Product%20Enquiry%20%E2%80%93%20' +
+          encodeURIComponent(data.name) + '&body=Hi%20Hebron%20Automotive%20Team%2C%0A%0AI%20am%20interested%20in%20the%20following%20product%3A%20' +
+          encodeURIComponent(data.name) + '%0A%0APlease%20share%20specifications%2C%20pricing%2C%20and%20lead%20time.%0A%0ARegards%2C';
+
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        modalBox.scrollTop = 0;
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Open on card click / keyboard
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          openModal(card.dataset.modal);
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card.dataset.modal);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+
+      /* ── 4. GSAP Animations ─────────────────────────── */
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero entrance
+        gsap.fromTo('.page-hero .breadcrumb, .page-hero .page-hero-eyebrow',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' }
+        );
+        gsap.fromTo('.page-hero h1',
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.65, delay: 0.2, ease: 'power2.out' }
+        );
+        gsap.fromTo('.page-hero p',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.55, delay: 0.4, ease: 'power2.out' }
+        );
+        gsap.fromTo('.hero-badge',
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.45, delay: 0.55, stagger: 0.1, ease: 'power2.out' }
+        );
+
+        // Cards stagger on scroll
+        gsap.fromTo('.product-card',
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.55,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#products-grid',
+              start: 'top 82%'
+            }
+          }
+        );
+
+        // CTA section
+        gsap.fromTo('.cta-inner',
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+            scrollTrigger: { trigger: '.section-capabilities-cta', start: 'top 80%' }
+          }
+        );
+      }
+
+      /* ── 5. Back to Top ─────────────────────────────── */
+      const backTop = document.getElementById('back-top');
+      if (backTop) {
+        window.addEventListener('scroll', function () {
+          backTop.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        backTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+    });
+  </script>
+
+  <script src="nav.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

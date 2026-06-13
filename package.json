@@ -1,0 +1,12 @@
+{
+  "name": "hebron-automotive-website",
+  "version": "1.0.0",
+  "description": "Premium corporate website for Hebron Automotive Products Pvt. Ltd.",
+  "scripts": {
+    "dev": "npx -y live-server --port=3000 --no-browser",
+    "start": "npx -y live-server --port=3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "author": "Hebron Automotive",
+  "license": "PROPRIETARY"
+}
